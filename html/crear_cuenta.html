@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/formularios.css">
+    <link rel="stylesheet" href="../css/headerf.css">
+    <link rel="shortcut icon" href="../img/lg.png"> 
+    <title>Crear cuenta</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu container container-fluid">
+            <a href="#" class="logo"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="../img/menu.png" alt="">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a class="Campos" href="/../SupeAromas/modelo/php/Roles/login.php">Iniciar Sesión</a></li>
+                    <!-- Button trigger modal -->
+                    <li>
+                        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#staticBackdrop">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <form onsubmit="return validar();" action="../../modelo/php/crear cuenta/Crear_cuenta.php" method="post" class="form"  id="registroForm">
+        <h2 class="form_title">Crear cuenta</h2>
+
+        <div class="form_container">
+            <div class="form_group">
+                <label for="Documento" class="form_label">Documento</label>
+                <input type="text" id="Documento" name="documento" class="form_input" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="tipoid" class="form_label">Tipo de documento</label>
+                <select class="form_input" name="tipo_doc" id="tipoid">
+                    <option selected disabled hidden value=""></option>
+                    <option value="C.E">C.E</option>
+                    <option value="C.C">C.C</option>
+                </select>
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="Nombres" class="form_label">Nombres</label>
+                <input type="text" id="Nombres" name="nombre" class="form_input" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="Apellidos" class="form_label">Apellidos</label>
+                <input type="text" id="Apellidos" name="apellido" class="form_input" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="Telefono" class="form_label">Teléfono</label>
+                <input type="text" id="Telefono" name="telefono" class="form_input" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="Usuario" class="form_label">Correo</label>
+                <input type="text" id="Usuario" name="correo" class="form_input" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="Contraseña" class="form_label">Contraseña</label>
+                <input type="password" id="Contraseña" name="contraseña" class="form_input" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <div class="form_group">
+                <label for="Respuesta" class="form_label">Escriba un apodo o el nombre de su mascota</label>
+                <input type="text" id="Respuesta" name="respuesta" class="form_input" onclick="mostrarAlerta()" style="padding-top: 2em;" placeholder="">
+                <span class="form_line"></span>
+            </div>
+
+            <input type="hidden" name="codigo_rol" value="2">
+
+            <div class="d-grid gap-2">
+                <button type="submit"  class="btn btn-primary" name="Registrarse" style="background-color: #369BD1;">Registrarse</button>
+            </div>
+        </div>
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
+    <script src="../../controlador/js/crear_cuenta.js"></script>
+    <script>
+        function mostrarAlerta() {
+            Swal.fire({
+                title: '¡Atención!',
+                text: 'Para poder recuperar su contraseña, debe escribir el nombre de su mascota o apodo.',
+                icon: 'warning',
+            })
+        }
+    </script>
+  
+
+    
+</body>
+
+</html>
